@@ -1,0 +1,82 @@
+UTLA TARUN
+Pathapatnam, Srikakulam, Andhra Pradesh
+ 9381713688
+# tarunutla1234@gmail.com
+ï LinkedIn
+§ GitHub
+ LeetCode
+Professional Summary
+AI Engineer with 2+ years of experience designing and deploying production-grade AI/ML and Generative AI applications.
+Hands-on expertise in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), AI Agents, LangChain,
+LangGraph, OpenAI APIs, vector databases, and prompt engineering. Experienced in building scalable AI solutions,
+intelligent automation workflows, and RESTful AI services using Python and AWS. Passionate about developing reliable,
+production-ready AI systems with a focus on performance, evaluation, and enterprise integration.
+Technical Skills
+Languages & Backend: Python, Java, FastAPI, Django, REST APIs, Microservices
+GenAI / LLM Systems: Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), LangChain,
+LangGraph, AI Agents, Agentic Workflows, Prompt Engineering, Context Engineering, OpenAI APIs, Function Calling,
+Tool Calling, Hybrid Retrieval, Reranking, Hugging Face Transformers, Semantic Search
+Machine Learning & CV: Machine Learning, Pandas, Deep Learning, PyTorch, TensorFlow, Scikit-learn, OpenCV,
+ONNX, ArcFace, InsightFace, NLP
+Cloud & Serverless: AWS (Lambda, EC2, S3, API Gateway, CloudWatch), Serverless Architecture, Step Functions,
+Amazon Bedrock
+Databases & Vector Stores: PostgreSQL, pgvector MongoDB, Amazon DynamoDB, FAISS, Milvus (Zilliz), ChromaDB,
+Vector Embeddings
+Tools: Docker, Git, GitHub, VS Code, Postman
+Experience
+FastCollab — Travel and Expense Management Platform
+Sep 2025 – Present
+AI Engineer
+Hyderabad, Telangana
+• Built and deployed production-grade Retrieval-Augmented Generation (RAG) systems using Large Language Models
+(LLMs), vector databases, and semantic search to deliver context-aware enterprise AI solutions.
+• Developed an AI-powered assistant using LangGraph, OpenAI APIs, RAG, and intent-based routing to automate user
+support and provide context-aware guidance across enterprise workflows.
+• Designed and implemented a travel policy enforcement engine to evaluate flight and hotel search results against corporate
+rules, dynamically classifying results as in-policy or out-of-policy.
+• Built intelligent document automation workflows using OCR and LLMs to extract, validate, and structure invoice and
+receipt data for downstream business processes.
+• Developed scalable serverless AI microservices using AWS Lambda, API Gateway, and reusable Lambda Layers to
+support asynchronous AI inference and workflow execution.
+• Collaborated with product, engineering, and business teams to design, develop, and deploy production-ready AI solutions
+following Agile development practices.
+• Evaluated retrieval quality and LLM responses using context relevance, answer correctness, and hallucination analysis to
+improve overall system reliability.
+T-Machine Software Solutions Pvt Ltd.
+Feb 2024 – Aug 2025
+AI Developer
+Chennai, Tamilnadu
+• Developed a face authentication system using ArcFace embeddings, FAISS, and Deep Learning techniques, achieving
+sub-100 ms semantic similarity search for real-time identity verification.
+• Designed a dynamic ONNX model loading pipeline for optimized model inference, enabling scalable deployment of AI
+models across production environments.
+• Enhanced face recognition accuracy through OpenCV-based image preprocessing, including alignment, lighting
+normalization, and blur detection.
+• Developed an NLP-based text classification system using Machine Learning techniques to categorize desktop activities
+into Work, Entertainment, and Communication classes.
+• Built NLP classification pipelines using OpenAI embeddings, SVM, and Random Forest models for semantic feature
+representation, achieving 85% accuracy on multi-class datasets through feature engineering and model evaluation.
+• Developed RESTful backend services using Django REST Framework and PostgreSQL to deliver real-time analytics and
+productivity insights.
+• Collaborated with cross-functional engineering teams following Agile methodologies to develop and deploy
+production-ready AI solutions.
+
+
+Projects
+Agentic RAG & Document Intelligence Platform
+• Built a production-grade Retrieval-Augmented Generation (RAG) platform using Large Language Models (LLMs),
+LangGraph, OpenAI APIs, and vector databases, supporting hybrid retrieval, reranking, query rewriting, and
+parent-child chunk retrieval for enterprise document intelligence.
+• Developed an asynchronous document ingestion pipeline for PDF and DOCX files, extracting text, tables, images, and
+code blocks to build structured knowledge bases for semantic search.
+• Designed LangGraph-based AI agent workflows for query understanding, retrieval planning, tool orchestration, context
+expansion, and response generation.
+• Implemented semantic vector retrieval using Zilliz (Milvus), OpenAI embeddings, and metadata filtering to improve
+retrieval relevance and contextual grounding.
+• Implemented retrieval evaluation, reranking, and hallucination reduction techniques by measuring context relevance,
+retrieval precision, and answer quality to improve overall LLM response reliability.
+Education
+Bapatla Engineering College
+Aug. 2020 – May 2024
+Bachelor of Technology in Computer Science and Engineering (Honors) | CGPA: 8.94/10
+Bapatla, Andhra Pradesh

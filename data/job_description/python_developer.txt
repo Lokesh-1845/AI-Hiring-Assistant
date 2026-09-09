@@ -1,0 +1,22 @@
+Job Title: Machine Learning Engineer
+
+Job Description:
+We are looking for a Machine Learning Engineer to develop, train, evaluate, and deploy machine learning models. The candidate will work with structured and unstructured data and collaborate with data scientists and software engineers.
+
+Required Skills:
+
+Python
+NumPy
+Pandas
+Scikit-learn
+Machine Learning
+Feature Engineering
+Model Evaluation
+postgresql
+Git
+Docker
+ML deployment
+Large Language Models
+Retrivel augumented generation
+
+Experience: 1–4 years

@@ -1,0 +1,94 @@
+POLAKI LOKESWARA RAO
+Andhra Pradesh, Srikakulam
+ 8332936300
+# lokeswararaopolaki37@gmail.com
+ï LinkedIn
+§ GitHub
+ LeetCode
+Professional Summary
+Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning with a strong foundation in
+Python, Java, PostgreSQL, Machine Learning, and Generative AI. Experienced in developing end-to-end projects involving
+Machine Learning systems, LLM applications, Retrieval-Augmented Generation (RAG), AI chatbots, and intelligent
+recruitment systems. Familiar with LangChain, Qdrant, FastAPI, Flask, Streamlit, Hugging Face embeddings, and LLM APIs.
+Seeking an internship opportunity to apply AI, Machine Learning, and software development skills to real-world problems.
+Technical Skills
+Languages Backend: Python, Java, FastAPI, Flask
+“‘ GenAI / LLM Systems: LLMs, RAG, LangChain, OpenAI APIs, Google Gemini APIs, OpenRouter, Prompt
+Engineering, Semantic Search, Data Retrieval, Reranking.
+Machine Learning & Deep Learning: Machine Learning, Deep Learning, Feature Engineering, PyTorch, TensorFlow,
+Scikit-learn, NLP, OpenCV.
+Databases & Vector Stores: PostgreSQL, Qdrant, Vector Embeddings
+Data & MLOps: MLflow, Docker
+Frontend & Tools: Streamlit, Git, GitHub, VS Code
+“‘
+Projects
+Customer Churn Prediction & Retention Intelligence System
+Python, Pandas, Scikit-learn, XGBoost, Random Forest, Flask, Streamlit, MLflow, Docker
+• Built an end-to-end Machine Learning system to predict customer churn and identify high-risk customers for targeted
+retention campaigns.
+• Performed exploratory data analysis, data validation, feature engineering, class-imbalance handling, cross-validation, and
+hyperparameter tuning across multiple classification models.
+• Evaluated model performance using Precision, Recall, F1-score, ROC-AUC, PR-AUC, and confusion matrix, with
+threshold optimization for business-focused customer targeting.
+• Developed a Flask-based inference service and Streamlit analytics dashboard for model predictions and interactive
+customer-risk analysis.
+• Tracked Machine Learning experiments and model performance using MLflow to support reproducible model
+development and evaluation.
+• Containerized the application using Docker and structured the project with modular training, inference, testing, and
+deployment components.
+Converse – Intelligent AI Chatbot
+Python, Flask, Streamlit, Google Gemini API, Ollama, Llama, DDGS,Git,Github
+• Developed a conversational AI chatbot providing an interactive interface for asking questions, conducting conversations,
+and retrieving information.
+• Built the backend using Python and Flask with REST-style endpoints for communication between the frontend and AI
+services.
+• Integrated Google Gemini API for cloud-based AI responses and Ollama with Llama models for local AI inference.
+• Implemented New Chat, Temporary Chat, Search Chats, and Recent Chats functionality with conversation-state
+management.
+• Added session-based user authentication using Flask and implemented asynchronous frontend-backend communication
+using JavaScript fetch requests.
+• Integrated DDGS web search to retrieve current information for relevant user queries and designed a responsive
+dark/glassmorphism-style chatbot interface.
+
+
+AI Hiring Assistant
+Python, Flask, RAG, LangChain, LLM, OpenRouter, Qdrant, Hugging Face, Streamlit,Vector Embeddings
+• Developed an AI Hiring Assistant web application that helps recruiters upload, analyze, compare, rank, and interact with
+candidate resumes through a centralized hiring dashboard.
+• Built an interactive hiring interface with features including Resume Upload, Job Description Upload, Chat with
+Resumes, ATS Resume Matcher, Resume Analyzer, Candidate Comparison, and Candidate Ranking.
+• Developed a Flask-based Python backend to handle user authentication, dashboard routing, resume uploads, API
+requests, and communication between the application and AI services.
+• Implemented a Retrieval-Augmented Generation (RAG) pipeline using LangChain, Qdrant Vector Database, and Hugging
+Face BGE embeddings to convert resume content into vector representations and retrieve relevant information.
+• Integrated an LLM through OpenRouter to generate context-aware responses based only on retrieved resume
+information, enabling recruiters to query candidate skills, experience, and qualifications.
+• Implemented resume analysis workflows for ATS matching, skill extraction, strengths and weaknesses identification,
+experience evaluation, candidate comparison, and ranking based on available resume information.
+• Connected the complete workflow from resume upload to backend processing, vector database storage, RAG retrieval,
+LLM response generation, and chatbot interaction.
+Education
+Aditya Institute of Technology and Engineering College
+Bachelor of Technology in Computer Science and Engineering (Artificial Intelligence & Machine Learning) | CGPA: 7.7/10Tekkali, A
+D.R Junior College
+2020 – 2022
+Intermediate (M.P.C) | Percentage: 89%
+Visakhapatnam, Andhra Pradesh
+Keshava Reddy Schools
+2020
+SSC | Percentage: 100%
+Srikakulam, Andhra Pradesh
+Certifications
+• Anthropic AI Fluency: Frameworks & Foundations – Anthropic
+• Claude 101 – Anthropic
+• Introduction to Machine Learning – Infosys Springboard
+• Introduction to Deep Learning – Infosys Springboard
+• Java Programming Certification
+• Python Fundamentals Certification
+• PostgreSQL: Became a SQL Developer – Certification of Completion
+Achievements
+• Participated in AI and Machine Learning workshops to strengthen practical knowledge of Artificial Intelligence and
+Machine Learning concepts.
+• Built multiple academic projects involving Machine Learning, Generative AI and intelligent AI applications.
+• Continuously learning and exploring Generative AI, Large Language Models (LLMs), Retrieval-Augmented Generation
+(RAG), and AI Agents.

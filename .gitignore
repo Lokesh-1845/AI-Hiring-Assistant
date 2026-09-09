@@ -1,0 +1,8 @@
+.env
+OPENROUTER_API_KEY.env
+.streamlit/secrets.toml
+all_codes.txt
+__pycache__/
+*.pyc
+venv/
+.venv/

@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+plotly
+pypdf
+python-docx
+pdfplumber
+scikit-learn
+sentence-transformers
+qdrant-client
+requests
+langchain

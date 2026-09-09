@@ -1,0 +1,112 @@
+course
+college/school
+university
+pass out year
+percentage
+B.Tech(AI/ML)
+Aditya Institute 
+of Technology 
+and Management
+JNUTUGV,
+VIZIANAGARAM
+2027
+7.7
+Intermediate d.r.junior college,
+vishakaptnam
+2022
+89%
+SSC
+2020
+POLAKI LOKESWARA RAO
+Computer Science and Engineering undergraduate with a specialization in Machine Learning and a strong
+foundation in Python, Java, SQL, and web development. Passionate about Artificial Intelligence, Machine
+Learning,. Experienced in building academic projects involving web applications and machine learning. Actively
+learning Deep Learning, NLP, LLMs, and AI Agents while seeking internship opportunities to apply technical
+knowledge to real-world problems.
+ABOUT ME
+EDUCATION
+PROJECT  EXPERIENCE
++8332936300
+lokeswararaopolaki37@gmail.com
+www.linkedin.com/in/lokeshpolaki
+board of
+ intermediate 
+education
+,Andhra Pradesh
+keshava Reddy 
+School
+,Srikakulam
+Board of Secondary
+Education
+Andhra Pradesh
+10.0
+https://github.com/Lokesh-1845
+Leave Approval Management System (ServiceNow)
+ Technologies Used: ServiceNow, App Engine Studio, Flow Designer, Client Scripts,
+Workflow Automation 
+ • Developed a Leave Approval Management System on the ServiceNow platform
+to automate employee leave requests and approvals.
+ • Created custom tables, forms, and modules using App Engine Studio.
+ • Designed and implemented automated approval workflows using Flow Designer.
+ • Configured role-based access control (RBAC) to ensure secure access for
+employees and managers. 
+• Integrated automated email notifications for leave requests, approvals, and
+status updates. 
+• Implemented client-side validation using Client Scripts to improve data
+accuracy and user experience.
+ • Streamlined the leave management process, enhancing efficiency,
+transparency, and workflow automation. 
+
+
+TECHNICAL SKILLS
+Programming Languages:
+Python
+Java
+Database:
+postgresql
+Machine Learning
+Deep Learning
+Natural Language Processing 
+Data Analysis
+Data Preprocessing
+Feature Engineering
+Machine Learning Model
+Development
+Machine Learning Pipelines
+Model Evaluation
+Model Deployment.
+Scikit-learn
+Tools:
+Git
+GitHub
+ServiceNow CSA & CAD Virtual Internship ServiceNow
+ 
+| EduSkills May 12, 2026 to June 30, 2026 
+Completed hands-on training in ServiceNow Certified System Administrator
+(CSA) and Certified Application Developer (CAD) modules. 
+• Developed applications using App Engine Studio and automated workflows
+with Flow Designer. 
+• Created and configured tables, forms, client scripts, business rules, and
+access control mechanisms. 
+• Gained practical experience in workflow automation, IT Service Management
+(ITSM), and low-code application development.
+ • Strengthened knowledge of ServiceNow platform administration, application
+development, and enterprise workflow solutions. 
+Technologies: 
+ServiceNow, App Engine Studio, Flow Designer, Client Scripts, Business Rules,
+ACLs, ITSM. 
+CERTIFICATIONS:
+1.Anthropic AI Fluency: Frameworks & Foundations
+2.Claude 101 by Anthropic
+3.Introduction to Machine Learning - Infosys Springboard
+4.Introduction to Deep Learning - Infosys Springboard
+5.Java Programming Certification
+6.Python Fundamentals Certification
+7.completion fo certification postgresql:became a sql developer
+ACHIEVEMENTS:
+1.Participated in AI and Machine Learning workshops.
+2.Built multiple academic projects in Machine Learning and Web Development.
+3.Continuously learning Generative AI, LLMs, and AI Agents.
+web development:
+Html
+Css
