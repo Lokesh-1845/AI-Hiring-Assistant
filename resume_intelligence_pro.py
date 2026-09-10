@@ -2462,7 +2462,7 @@ def retrieve_jd_relevant_resume_text(
     candidate_name,
     resume_text,
     job_description,
-    k=50
+    k=100
 ):
 
     if RAG_BACKEND_AVAILABLE:
@@ -2509,17 +2509,24 @@ def retrieve_jd_relevant_resume_text(
 # ============================================================
 
 def get_openrouter_key():
+    key = os.getenv("OPENROUTER_API_KEY", "").strip()
 
-    return (
-        os.getenv(
-            "OPENROUTER_API_KEY"
-        )
-        or os.getenv(
-            "OPENAI_API_KEY"
-        )
-        or ""
-    ).strip()
+    if key:
+        return key
 
+    key = os.getenv("OPENAI_API_KEY", "").strip()
+
+    if key:
+        return key
+
+    try:
+        key = st.secrets.get("OPENROUTER_API_KEY", "")
+        if key:
+            return str(key).strip()
+    except Exception:
+        pass
+
+    return ""
 
 def call_llm_match_analysis(
     candidate_name,
@@ -3947,7 +3954,7 @@ elif page == "AI Match Analysis":
                         ],
                     job_description=
                         job_description,
-                    k=50,
+                    k=100,
                 )
             )
 

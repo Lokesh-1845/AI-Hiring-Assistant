@@ -1,3 +1,4 @@
+
 import os
 from pathlib import Path
 
@@ -8,7 +9,6 @@ from qdrant_client import QdrantClient, models
 
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from langchain_openai import ChatOpenAI
@@ -18,9 +18,41 @@ from langchain_openai import ChatOpenAI
 # 1. ENVIRONMENT
 # ============================================================
 
-load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent
+
+# Load .env for LOCAL development
+env_path = BASE_DIR / ".env"
+
+if env_path.exists():
+    load_dotenv(dotenv_path=env_path)
+
+
+# ============================================================
+# 2. OPENROUTER API KEY
+# ============================================================
+# Priority:
+#
+# 1. Streamlit Secrets
+# 2. .env environment variable
+#
+# This allows the same code to work locally and on Streamlit Cloud.
+# ============================================================
+
+OPENROUTER_API_KEY = None
+
+try:
+    OPENROUTER_API_KEY = st.secrets.get("OPENROUTER_API_KEY")
+except Exception:
+    pass
+
+
+if not OPENROUTER_API_KEY:
+    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+
+# ============================================================
+# 3. PATHS / QDRANT CONFIGURATION
+# ============================================================
 
 QDRANT_PATH = BASE_DIR / "qdrant_db"
 
@@ -28,24 +60,17 @@ COLLECTION_NAME = "chunked_data"
 
 VECTOR_SIZE = 384
 
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-
 
 # ============================================================
-# 2. EMBEDDINGS
+# 4. EMBEDDINGS
 # ============================================================
-# IMPORTANT:
-# This is lazy-loaded.
+# Lazy loaded.
 #
-# The model is NOT loaded when resume_intelligence_pro.py
-# starts.
-#
-# It loads only when RAG is actually required.
+# The Hugging Face model is NOT loaded when the application starts.
+# It loads only when get_embeddings() is called.
 # ============================================================
 
-@st.cache_resource(
-    show_spinner="Loading AI embedding model..."
-)
+@st.cache_resource(show_spinner="Loading AI embedding model...")
 def get_embeddings():
 
     return HuggingFaceEmbeddings(
@@ -54,9 +79,7 @@ def get_embeddings():
 
 
 # ============================================================
-# 3. QDRANT
-# ============================================================
-# Also lazy-loaded.
+# 5. QDRANT CLIENT
 # ============================================================
 
 @st.cache_resource
@@ -68,7 +91,7 @@ def get_qdrant_client():
 
 
 # ============================================================
-# 4. VECTOR STORE
+# 6. VECTOR STORE
 # ============================================================
 
 @st.cache_resource
@@ -78,9 +101,7 @@ def get_vector_store():
 
     client = get_qdrant_client()
 
-    if not client.collection_exists(
-        COLLECTION_NAME
-    ):
+    if not client.collection_exists(COLLECTION_NAME):
 
         client.create_collection(
 
@@ -105,11 +126,18 @@ def get_vector_store():
 
 
 # ============================================================
-# 5. LLM
+# 7. LLM
 # ============================================================
 
 @st.cache_resource
 def get_llm():
+
+    if not OPENROUTER_API_KEY:
+
+        raise ValueError(
+            "OPENROUTER_API_KEY is not configured."
+        )
+
     return ChatOpenAI(
 
         api_key=OPENROUTER_API_KEY,
@@ -125,7 +153,7 @@ def get_llm():
 
 
 # ============================================================
-# 6. CREATE RESUME CHUNKS
+# 8. CREATE RESUME CHUNKS
 # ============================================================
 
 def create_resume_chunks(
@@ -155,9 +183,7 @@ def create_resume_chunks(
 
         metadata={
             "source": source,
-
             "candidate": candidate_name,
-
             "document_type": "resume"
         }
     )
@@ -183,7 +209,7 @@ def create_resume_chunks(
 
 
 # ============================================================
-# 7. INDEX RESUME
+# 9. INDEX RESUME
 # ============================================================
 
 def index_resume(
@@ -215,7 +241,7 @@ def index_resume(
 
 
 # ============================================================
-# 8. CANDIDATE FILTER
+# 10. CANDIDATE FILTER
 # ============================================================
 
 def create_candidate_filter(
@@ -248,21 +274,19 @@ def create_candidate_filter(
 
 
 # ============================================================
-# 9. RETRIEVE RESUME CHUNKS
+# 11. RETRIEVE RESUME CHUNKS
 # ============================================================
 
 def retrieve_resume_chunks(
     question,
     candidate_name,
-    k=8
+    k=100
 ):
 
     vector_store = get_vector_store()
 
-    candidate_filter = (
-        create_candidate_filter(
-            candidate_name
-        )
+    candidate_filter = create_candidate_filter(
+        candidate_name
     )
 
     documents = vector_store.similarity_search(
@@ -278,12 +302,10 @@ def retrieve_resume_chunks(
 
 
 # ============================================================
-# 10. CREATE CONTEXT
+# 12. CREATE CONTEXT
 # ============================================================
 
-def create_context(
-    documents
-):
+def create_context(documents):
 
     if not documents:
 
@@ -303,7 +325,7 @@ def create_context(
 
 
 # ============================================================
-# 11. ASK RESUME QUESTION
+# 13. ASK RESUME QUESTION
 # ============================================================
 
 def ask_resume_question(
@@ -317,14 +339,14 @@ def ask_resume_question(
 
         candidate_name=candidate_name,
 
-        k=8
+        k=100
     )
 
     if not documents:
 
         return (
-            "I couldn't find relevant "
-            "information in this candidate's resume."
+            "I couldn't find relevant information "
+            "in this candidate's resume."
         )
 
     context = create_context(
@@ -367,62 +389,103 @@ Rules:
 
 
 # ============================================================
-# 12. BACKEND HEALTH CHECK
+# 14. RAG CONNECTION / HEALTH CHECK
 # ============================================================
-# This does NOT load the HuggingFace model.
-# It only tells the frontend whether the basic backend
-# configuration is available.
 #
-# This function is intentionally NOT displayed in the UI.
+# IMPORTANT:
+#
+# This function is lightweight.
+#
+# It checks:
+#   1. Qdrant database exists
+#   2. OpenRouter API key exists
+#   3. Qdrant client works
+#   4. Required collection exists
+#
+# It DOES NOT load the Hugging Face embedding model.
+#
+# Therefore calling this function from the dashboard
+# should NOT download/load the embedding model.
 # ============================================================
 
 def check_rag_connection():
-    """
-    Lightweight RAG connection check.
-
-    IMPORTANT:
-    This function does NOT load the Hugging Face embedding model.
-    Therefore it does not slow down Streamlit startup.
-    """
 
     try:
+
+        # ----------------------------------------------------
         # Check Qdrant database folder
+        # ----------------------------------------------------
+
         if not QDRANT_PATH.exists():
+
             return {
                 "connected": False,
                 "qdrant": False,
                 "embeddings": False,
-                "message": "Qdrant database not found."
+                "openrouter": bool(OPENROUTER_API_KEY),
+                "message": "Qdrant database folder not found."
             }
 
-        # Check API key configuration
+
+        # ----------------------------------------------------
+        # Check OpenRouter API key
+        # ----------------------------------------------------
+
         if not OPENROUTER_API_KEY:
+
             return {
                 "connected": False,
                 "qdrant": True,
                 "embeddings": False,
-                "message": "OpenRouter API key not configured."
+                "openrouter": False,
+                "message": "OpenRouter API key is not configured."
             }
 
-        # Try opening local Qdrant
+
+        # ----------------------------------------------------
+        # Test Qdrant
+        # ----------------------------------------------------
+
         client = get_qdrant_client()
+
+
+        # ----------------------------------------------------
+        # Check collection
+        # ----------------------------------------------------
 
         if not client.collection_exists(
             COLLECTION_NAME
         ):
+
             return {
                 "connected": False,
                 "qdrant": True,
                 "embeddings": False,
-                "message": "RAG collection not found."
+                "openrouter": True,
+                "message": (
+                    f"Qdrant collection "
+                    f"'{COLLECTION_NAME}' not found."
+                )
             }
+
+
+        # ----------------------------------------------------
+        # Basic RAG configuration is ready
+        # ----------------------------------------------------
 
         return {
             "connected": True,
             "qdrant": True,
+
+            # This means embedding configuration is available,
+            # NOT that the Hugging Face model was loaded.
             "embeddings": True,
+
+            "openrouter": True,
+
             "message": "RAG backend is ready."
         }
+
 
     except Exception as e:
 
@@ -430,38 +493,13 @@ def check_rag_connection():
             "connected": False,
             "qdrant": False,
             "embeddings": False,
-            "message": str(e)
+            "openrouter": False,
+            "message": f"RAG connection error: {str(e)}"
         }
 
 
-import os
-from pathlib import Path
-from dotenv import load_dotenv
-
 # ============================================================
-# LOAD ENVIRONMENT VARIABLES
-# ============================================================
-
-# Explicitly specify the path to the .env file
-env_path = Path(__file__).resolve().parent / ".env"
-
-if not env_path.exists():
-    print("Warning: .env file not found. Ensure the environment variables are set.")
-else:
-    try:
-        load_dotenv(dotenv_path=env_path)
-        print(".env file loaded successfully.")
-    except Exception as e:
-        print(f"Error loading .env file: {e}")
-
-# Check if the API key is set
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-
-if not OPENROUTER_API_KEY:
-    raise ValueError("OPENROUTER_API_KEY is not set. Check your .env file.")
-
-# ============================================================
-# 13. DIRECT EXECUTION
+# 15. DIRECT EXECUTION
 # ============================================================
 
 if __name__ == "__main__":

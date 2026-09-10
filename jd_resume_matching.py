@@ -19,17 +19,12 @@ from ATS_score import (
 # 1. Load environment variables
 # --------------------------------------------------
 
-load_dotenv()
-import os
-
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-
-if not OPENROUTER_API_KEY:
-    raise ValueError("OPENROUTER_API_KEY is not set. Check your .env file.")
-
 import streamlit as st
 
-OPENROUTER_API_KEY = st.secrets["OPENROUTER_API_KEY"]
+OPENROUTER_API_KEY = st.secrets.get("OPENROUTER_API_KEY")
+
+if not OPENROUTER_API_KEY:
+    raise ValueError("OPENROUTER_API_KEY is not set. Add it to Streamlit Secrets.")
 # --------------------------------------------------
 # 2. Base directory
 # --------------------------------------------------
