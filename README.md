@@ -1,2 +1,7 @@
-# AI-Hiring-Assistant
-An AI-driven recruitment web application built with Flask, LangChain, and Qdrant that allows recruiters to analyze, compare, rank, and interactively query candidate resumes using Retrieval-Augmented Generation (RAG).
+# AI Hiring Assistant
+
+An AI-powered hiring assistant that helps recruiters analyze, match, compare, rank, and chat with candidate resumes.
+
+## 🚀 Live Demo
+
+👉 https://ai-hiring-assistant-n8qpomsgskdewwktmmhmsp.streamlit.app/
