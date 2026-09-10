@@ -1431,13 +1431,12 @@ except ImportError:
 # ============================================================
 try:
     from rag_backend import (
-        index_resume,
-        ask_resume_question,
-        retrieve_resume_chunks,
-        check_rag_connection,)
+    index_resume,
+    ask_resume_question,
+    retrieve_resume_chunks,
+    check_rag_connection,)
     RAG_BACKEND_AVAILABLE = True
     RAG_BACKEND_ERROR = None
-
 except Exception as e:
     RAG_BACKEND_AVAILABLE = False
     RAG_BACKEND_ERROR = str(e)
@@ -1448,7 +1447,8 @@ st.set_page_config(
     page_title="Resume Intelligence Pro",
     page_icon="🎯",
     layout="wide",
-    initial_sidebar_state="expanded",)
+    initial_sidebar_state="expanded",
+)
 
 
 # ============================================================
@@ -2880,15 +2880,8 @@ with st.sidebar.expander(
 ):
 
     try:
-        if check_rag_connection is not None:
-            rag_status = check_rag_connection()
-        else:
-            rag_status = {
-                "connected": False,
-                "qdrant": False,
-                "embeddings": False,
-                "openrouter": False,
-                "message": f"RAG import error: {RAG_IMPORT_ERROR}"}
+
+        rag_status = check_rag_connection()
 
         if rag_status["connected"]:
 
